@@ -1,6 +1,8 @@
 body {
-  background-color: #282a2d;
-  background-image: url('https://i.imgsafe.org/6c147abfa3.jpg');
+  background: linear-gradient(75deg, #ffffff, #000000, #611b1a, #5d4b1b, #194714, #0a3e43, #380c45, #000000, #ffffff);
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 500s ease infinite;
+  animation: rainbow 500s ease infinite;
   background-repeat: repeat;
   color: white;
   font-family: 'Oswald', sans-serif;
@@ -10,6 +12,18 @@ body {
   perspective: 1000px;
   text-transform: uppercase;
 }
+
+@-webkit-keyframes rainbow {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+@keyframes rainbow {
+  0%{background-position:0% 57%}
+  50%{background-position:100% 44%}
+  100%{background-position:0% 57%}
+}
+
 .site-wrap {
   transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
 }
