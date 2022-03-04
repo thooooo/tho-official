@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(75deg, #ffffff, #000000, #611b1a, #5d4b1b, #194714, #0a3e43, #380c45, #000000, #ffffff);
+  background: linear-gradient(75deg, #acacac, #000000, #000000, #000000, #000000, #acacac);
   background-size: 1800% 1800%;
   -webkit-animation: rainbow 500s ease infinite;
   animation: rainbow 500s ease infinite;
@@ -11,6 +11,7 @@ body {
   overflow: hidden;
   perspective: 1000px;
   text-transform: uppercase;
+  cursor: none;
 }
 
 @-webkit-keyframes rainbow {
@@ -37,7 +38,22 @@ body {
 h1 {
   font-size: 20vmin;
   margin: 0;
+  color: #f35626;
+	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 100s infinite linear;
 }
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
 .panel-wrap {
   perspective: 2000px;
   transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
@@ -208,82 +224,28 @@ h1 {
   border-color: white;
 }
 
-        
-.wrapper {
-  display: inline-block;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%,-50%)
+#cursor {
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  will-change: transform;
+  mix-blend-mode: difference;
 }
 
-.video-main {
-  position: relative;
-  display: inline-block;
-}
-
-.video {
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 100%;
-  background: transparent;
-  color: #fff;
-  display: inline-block;
-  background: #000000;
-  z-index: 999;
-}
-
-@keyframes waves {
-  0% {
-    -webkit-transform: scale(0.2, 0.2);
-    transform: scale(0.2, 0.2);
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+@media (hover: hover) and (pointer: fine) {
+  .cursor__circle {
+    width: 32px;
+    height: 32px;
+    margin-top: -50%;
+    margin-left: -50%;
+    border-radius: 50%;
+    border: solid 1px rgba(227, 222, 193, 0.64);
+    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
-  50% {
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-  }
-  100% {
-    -webkit-transform: scale(0.9, 0.9);
-    transform: scale(0.9, 0.9);
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  }
-}
-
-.fa-play:before {
-  content: "\f04b";
-}
-
-.waves {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  border-radius: 100%;
-  right: -50px;
-  bottom: -50px;
-  z-index: -1;
-   -webkit-animation: waves 3s ease-in-out infinite;
-  animation: waves 3s ease-in-out infinite;
-}
-        
-.wave-1 {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-
-.wave-2 {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-.wave-3 {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
 }
