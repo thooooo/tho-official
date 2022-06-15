@@ -205,7 +205,7 @@ var self = window;
 		
 		canvas = document.createElement('canvas');
 		
-    canvas.width = innerWidth;
+    	canvas.width = innerWidth;
 		canvas.height = innerHeight;
 		
 		canvas.style.position = 'absolute';
@@ -241,284 +241,435 @@ var self = window;
 		}
 		else console.error('Please, update your browser for seeing this animation.');
 	}
-	
-  // Browser supports canvas?
-	function capable() 
-  {
-		return canvas.getContext && canvas.getContext('2d');
-	}
-	
-  // On Resize
-	
-	function onResize() 
-  {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-	}
-	
-  // On Mouse Down
-	
-	function onMouseDown(event) 
-  {
-		event.preventDefault();
-		mouseDown = true;
-	}
-	
-  // On Mouse Up
-	
-	function onMouseUp(event) 
-  {
-		event.preventDefault();
-		mouseDown = false;
-	}
-	
-  // On Mouse Move
-	
-	function onMouseMove(event) 
-  {
-		event.preventDefault();
-		mouse.x = event.pageX - canvas.offsetLeft;
-		mouse.y = event.pageY - canvas.offsetTop;
-		if(interactive) mouseDown = interactive = false;
-	}
-	
-  // On Touch Start
-	
-	function onTouchStart(event) 
-  {
-		event.preventDefault();
-		mouseDown = true;
-	}
-	
-	// On Touch End
-	
-	function onTouchEnd(event) 
-  {
-		event.preventDefault();
-		mouseDown = false;
-	}
-	
-  // On Touch Move
-	
-	function onTouchMove(event) 
-  {
-		event.preventDefault();
-		mouse.x = event.touches[0].pageX - canvas.offsetLeft;
-		mouse.y = event.touches[0].pageY - canvas.offsetTop;
-		if(interactive) mouseDown = interactive = false;
-	}
-	
-  // Generate Waves
-	
-	function createWaves() 
-  {
-		var totalPoints = Math.round(canvas.width / 170);
 
-    // First Wave
+// Browser supports canvas?
+function capable() 
+{
+	return canvas.getContext && canvas.getContext('2d');
+}
 
-		for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
-    {
-			wave1.push(
-      {
-				x: canvas.width * quantity / (len - 1),
-				y: canvas.height * 0.5 - 20,
-				vy: Math.random() * 10,
-				depth: canvas.height * 0.5	
-			});
-    }
+// On Resize
+
+function onResize() 
+{
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+}
+
+// On Mouse Down
+
+function onMouseDown(event) 
+{
+	event.preventDefault();
+	mouseDown = true;
+}
+
+// On Mouse Up
+
+function onMouseUp(event) 
+{
+	event.preventDefault();
+	mouseDown = false;
+}
+
+// On Mouse Move
+
+function onMouseMove(event) 
+{
+	event.preventDefault();
+	mouse.x = event.pageX - canvas.offsetLeft;
+	mouse.y = event.pageY - canvas.offsetTop;
+	if(interactive) mouseDown = interactive = false;
+}
+
+// On Touch Start
+
+function onTouchStart(event) 
+{
+	event.preventDefault();
+	mouseDown = true;
+}
+
+// On Touch End
+
+function onTouchEnd(event) 
+{
+	event.preventDefault();
+	mouseDown = false;
+}
+
+// On Touch Move
+
+function onTouchMove(event) 
+{
+	event.preventDefault();
+	mouse.x = event.touches[0].pageX - canvas.offsetLeft;
+	mouse.y = event.touches[0].pageY - canvas.offsetTop;
+	if(interactive) mouseDown = interactive = false;
+}
+
+// Generate Waves
+
+function createWaves() 
+{
+	var totalPoints = Math.round(canvas.width / 170);
+
+// First Wave
+
+	for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
+{
+		wave1.push(
+	{
+			x: canvas.width * quantity / (len - 1),
+			y: canvas.height * 0.5 - 20,
+			vy: Math.random() * 10,
+			depth: canvas.height * 0.5	
+		});
+}
+		
+// Second Wave
+
+	for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
+{
+	wave2.push(
+	{
+	x: canvas.width * quantity / (len - 1),
+	y: canvas.height * 0.5,
+	vy: Math.random() * 10,
+	depth: canvas.height * 0.5  
+	});
+}
+		
+// Third Wave
+
+	for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
+{
+	wave3.push(
+	{
+			x: canvas.width * quantity / (len - 1),
+			y: canvas.height * 0.5 + 20,
+			vy: Math.random() * 10,
+			depth: canvas.height * 0.5	
+		});		
+}
+
+	wave();
+}
+
+// Loop Anim
+
+function wave() 
+{
+	clear();
+	update();
+	render();
+	requestAnimFrame(wave);	
+}
+
+// Clear All
+	
+function clear() 
+{
+	context.clearRect(0, 0, innerWidth, innerHeight);
+};
+
+// Update Anim
+
+function update() 
+{
+var ease, friction, threshold;
+	friction = 0.99;
+	threshold = interactive ? Math.round(canvas.width / 4.5) : 280;
+
+	if(interactive) 
+{
+		angle += 0.05;
+		mouse.x = canvas.width * 0.5 + Math.sin(angle) * canvas.width * 0.2;
+		mouse.y = (canvas.height * 0.5 - 50) + Math.sin(angle) * canvas.height * 0.2;
+	}
+
+	for(var index = 0; index < (wave1.length || wave2.length || wave3.length); index++) 
+{  
+		var point1 = wave1[index];
+		var point2 = wave2[index];
+		var point3 = wave3[index];
+	
+		point1.y += point1.vy;
+		point2.y += point2.vy;
+		point3.y += point3.vy;
+	
+		// Ease
+		point1.vy += (point1.depth - point1.y) * (interactive ? 0.03 : 0.009);
+		point2.vy += (point2.depth - point2.y) * (interactive ? 0.02 : 0.008);
+		point3.vy += (point3.depth - point3.y) * (interactive ? 0.01 : 0.007);
+		
+		// Friction
+		point1.vy *= friction;
+		point2.vy *= friction;
+		point3.vy *= friction;
+		
+		// Threshold
+		if(distanceTo(mouse, point1) < threshold && mouseDown) point1.vy += (mouse.y - point1.y) * (interactive ? 0.03 : 0.009);
+
+		if(distanceTo(mouse, point2) < threshold && mouseDown) point2.vy += (mouse.y - point2.y) * (interactive ? 0.02 : 0.008);
 			
-    // Second Wave
+		if(distanceTo(mouse, point3) < threshold && mouseDown) point3.vy += (mouse.y - point3.y) * (interactive ? 0.01 : 0.007);
+	}	
+}
 
-		for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
-    {
-      wave2.push(
-      {
-        x: canvas.width * quantity / (len - 1),
-        y: canvas.height * 0.5,
-        vy: Math.random() * 10,
-        depth: canvas.height * 0.5  
-      });
-    }
-			
-    // Third Wave
+// Rendering Waves
 
-		for(var quantity = 0, len = totalPoints; quantity < len; quantity++)
-    {
-      wave3.push(
-      {
-				x: canvas.width * quantity / (len - 1),
-				y: canvas.height * 0.5 + 20,
-				vy: Math.random() * 10,
-				depth: canvas.height * 0.5	
-			});		
-    }
+function render() 
+{
+	for(var wave = 0; wave < (wave1.length || wave2.length || wave3.length); wave++) 
+{  
+		// Smooth Curves
 
-		wave();
-	}
-  
-  // Loop Anim
-	
-	function wave() 
-  {
-		clear();
-		update();
-		render();
-		requestAnimFrame(wave);	
-	}
+		clear();		
+		context.save();
+		context.globalAlpha = 0.5;
+		context.fillStyle = '#fff';
+		context.beginPath();
+		context.moveTo(wave1[0].x, wave1[0].y);
+		
+		// Draw Wave 1
 
-  // Clear All
-	 
-	function clear() 
-  {
-		context.clearRect(0, 0, innerWidth, innerHeight);
-	};
-	
-  // Update Anim
-	
-	function update() 
-  {
-    var ease, friction, threshold;
-		friction = 0.99;
-		threshold = interactive ? Math.round(canvas.width / 4.5) : 280;
-	
-		if(interactive) 
-    {
-			angle += 0.05;
-			mouse.x = canvas.width * 0.5 + Math.sin(angle) * canvas.width * 0.2;
-			mouse.y = (canvas.height * 0.5 - 50) + Math.sin(angle) * canvas.height * 0.2;
+		for(var N = 1; N < wave1.length - 2; N++) 
+	{
+			var xc = (wave1[N].x + wave1[N + 1].x) / 2;
+			var yc = (wave1[N].y + wave1[N + 1].y) / 2;
+			context.quadraticCurveTo(wave1[N].x, wave1[N].y, xc, yc);
 		}
-	
-		for(var index = 0; index < (wave1.length || wave2.length || wave3.length); index++) 
-    {  
-			var point1 = wave1[index];
-			var point2 = wave2[index];
-			var point3 = wave3[index];
 		
-			point1.y += point1.vy;
-			point2.y += point2.vy;
-			point3.y += point3.vy;
+		context.quadraticCurveTo(wave1[wave1.length - 2].x, wave1[wave1.length - 2].y, wave1[wave1.length - 1].x, wave1[wave1.length - 1].y);
+		context.lineTo(canvas.width, canvas.height);
+		context.lineTo(0, canvas.height);
+		context.lineTo(0, wave1[0].y);
+		context.fill();
+		context.restore();
 		
-			// Ease
-			point1.vy += (point1.depth - point1.y) * (interactive ? 0.03 : 0.009);
-			point2.vy += (point2.depth - point2.y) * (interactive ? 0.02 : 0.008);
-			point3.vy += (point3.depth - point3.y) * (interactive ? 0.01 : 0.007);
-			
-			// Friction
-			point1.vy *= friction;
-			point2.vy *= friction;
-			point3.vy *= friction;
-			
-			// Threshold
-			if(distanceTo(mouse, point1) < threshold && mouseDown) point1.vy += (mouse.y - point1.y) * (interactive ? 0.03 : 0.009);
+		context.save();
+		context.globalAlpha = 0.5;
+		context.fillStyle = '#001';
+		context.beginPath();
+		
+		context.moveTo(wave2[0].x, wave2[0].y);
+		
+		// Draw Wave 2
 
-			if(distanceTo(mouse, point2) < threshold && mouseDown) point2.vy += (mouse.y - point2.y) * (interactive ? 0.02 : 0.008);
-				
-			if(distanceTo(mouse, point3) < threshold && mouseDown) point3.vy += (mouse.y - point3.y) * (interactive ? 0.01 : 0.007);
-		}	
-	}
-	
-  // Rendering Waves
-	
-	function render() 
-  {
-		for(var wave = 0; wave < (wave1.length || wave2.length || wave3.length); wave++) 
-    {  
-			// Smooth Curves
+		for(var N = 1; N < wave2.length - 2; N++) 
+	{
+			var xc = (wave2[N].x + wave2[N + 1].x) / 2;
+			var yc = (wave2[N].y + wave2[N + 1].y) / 2;
+			context.quadraticCurveTo(wave2[N].x, wave2[N].y, xc, yc);	
+		}
+		
+		context.quadraticCurveTo(wave2[wave2.length - 2].x, wave2[wave2.length - 2].y, wave2[wave2.length - 1].x, wave2[wave2.length - 1].y);
+		context.lineTo(canvas.width, canvas.height);
+		context.lineTo(0, canvas.height);
+		context.lineTo(0, wave2[0].y);
+		context.fill();
+		context.restore();
+		
+		context.save();
+		context.globalAlpha = 0.5;
+		context.fillStyle = '#000';
+		context.beginPath();
+		
+		context.moveTo(wave3[0].x, wave3[0].y);
+		
+		// Draw Wave 3
 
-			clear();		
-			context.save();
-			context.globalAlpha = 0.5;
-			context.fillStyle = '#fff';
-			context.beginPath();
-			context.moveTo(wave1[0].x, wave1[0].y);
-			
-			// Draw Wave 1
+		for(var N = 1; N < wave3.length - 2; N++) 
+	{
+			var xc = (wave3[N].x + wave3[N + 1].x) / 2;
+			var yc = (wave3[N].y + wave3[N + 1].y) / 2;
+			context.quadraticCurveTo(wave3[N].x, wave3[N].y, xc, yc);
+		}
+		
+		context.quadraticCurveTo(wave3[wave3.length - 2].x, wave3[wave3.length - 2].y, wave3[wave3.length - 1].x, wave3[wave3.length - 1].y);
+		context.lineTo(canvas.width, canvas.height);
+		context.lineTo(0, canvas.height);
+		context.lineTo(0, wave3[0].y);
+		context.fill();
+		context.restore();
+}
+}
 
-			for(var N = 1; N < wave1.length - 2; N++) 
-      {
-				var xc = (wave1[N].x + wave1[N + 1].x) / 2;
-				var yc = (wave1[N].y + wave1[N + 1].y) / 2;
-				context.quadraticCurveTo(wave1[N].x, wave1[N].y, xc, yc);
-			}
-			
-			context.quadraticCurveTo(wave1[wave1.length - 2].x, wave1[wave1.length - 2].y, wave1[wave1.length - 1].x, wave1[wave1.length - 1].y);
-			context.lineTo(canvas.width, canvas.height);
-			context.lineTo(0, canvas.height);
-			context.lineTo(0, wave1[0].y);
-			context.fill();
-			context.restore();
-			
-			context.save();
-			context.globalAlpha = 0.5;
-			context.fillStyle = '#001';
-			context.beginPath();
-			
-			context.moveTo(wave2[0].x, wave2[0].y);
-			
-			// Draw Wave 2
+// Distance Between Waves
 
-			for(var N = 1; N < wave2.length - 2; N++) 
-      {
-				var xc = (wave2[N].x + wave2[N + 1].x) / 2;
-				var yc = (wave2[N].y + wave2[N + 1].y) / 2;
-				context.quadraticCurveTo(wave2[N].x, wave2[N].y, xc, yc);	
-			}
-			
-			context.quadraticCurveTo(wave2[wave2.length - 2].x, wave2[wave2.length - 2].y, wave2[wave2.length - 1].x, wave2[wave2.length - 1].y);
-			context.lineTo(canvas.width, canvas.height);
-			context.lineTo(0, canvas.height);
-			context.lineTo(0, wave2[0].y);
-			context.fill();
-			context.restore();
-			
-			context.save();
-			context.globalAlpha = 0.5;
-			context.fillStyle = '#000';
-			context.beginPath();
-			
-			context.moveTo(wave3[0].x, wave3[0].y);
-			
-			// Draw Wave 3
+function distanceTo(pointA, pointB) 
+{
+	var dx = Math.abs(pointA.x - pointB.x);
+	var dy = Math.abs(pointA.y - pointB.y);
+	return Math.sqrt(dx * dx + dy * dy);
+};
 
-			for(var N = 1; N < wave3.length - 2; N++) 
-      {
-				var xc = (wave3[N].x + wave3[N + 1].x) / 2;
-				var yc = (wave3[N].y + wave3[N + 1].y) / 2;
-				context.quadraticCurveTo(wave3[N].x, wave3[N].y, xc, yc);
-			}
-			
-			context.quadraticCurveTo(wave3[wave3.length - 2].x, wave3[wave3.length - 2].y, wave3[wave3.length - 1].x, wave3[wave3.length - 1].y);
-			context.lineTo(canvas.width, canvas.height);
-			context.lineTo(0, canvas.height);
-			context.lineTo(0, wave3[0].y);
-			context.fill();
-			context.restore();
-    }
-	}
-	
-  // Distance Between Waves
-	
-	function distanceTo(pointA, pointB) 
-  {
-		var dx = Math.abs(pointA.x - pointB.x);
-		var dy = Math.abs(pointA.y - pointB.y);
-		return Math.sqrt(dx * dx + dy * dy);
-	};
-	
 // Request 60 FPS
 	
-	window.requestAnimFrame = (function() 
-  {
-		return  window.requestAnimationFrame   || 
-				window.webkitRequestAnimationFrame || 
-				window.mozRequestAnimationFrame    || 
-				window.oRequestAnimationFrame      || 
-				window.msRequestAnimationFrame     || 
+	win.requestAnimFrame = (function() 
+{
+		return  win.requestAnimationFrame   || 
+				win.webkitRequestAnimationFrame || 
+				win.mozRequestAnimationFrame    || 
+				win.oRequestAnimationFrame      || 
+				win.msRequestAnimationFrame     || 
 				function(callback) 
-        {
-					window.setTimeout(callback, 1000 / FPS);
+		{
+			win.setTimeout(callback, 1000 / FPS);
 				};		  
-  })();
+})();
 
-	window.addEventListener ? window.addEventListener('load', init, false) : window.onload = init;
+	win.addEventListener ? win.addEventListener('load', init, false) : win.onload = init;
 })(self);
+
+
+// Miam Page
+
+// Display Recipes
+
+function showMiam() { 
+	doc.getElementById("miam").style.display="flex";
+	doc.getElementById("btn").style.display="none";
+}
+
+doc.getElementById("btn").addEventListener('click', showMiam);
+
+var done = false;
+
+function showRecipe(i) {
+	if (done) 
+	{
+		doc.getElementsByClassName('by')[i].style.display="flex";
+		doc.getElementsByClassName('cos')[i].style.display="flex";
+		doc.getElementsByClassName('rec')[i].style.display="flex";
+		done = false;
+	}
+	else{
+		doc.getElementsByClassName('by')[i].style.display="none";
+		doc.getElementsByClassName('cos')[i].style.display="none";
+		doc.getElementsByClassName('rec')[i].style.display="none";
+		done = true;
+	}
+}
+
+const onClick = (event) => {
+	if(Number.isInteger(parseInt(event.srcElement.id)))
+		doc.getElementById(event.srcElement.id).addEventListener('click', showRecipe(event.srcElement.id));
+  }
+window.addEventListener('click', onClick);
+
+// List Generation
+
+function Detail(name, by, dif, cos, rec) {
+    this.name = name;
+    this.by = by;
+    this.dif = dif;
+    this.cos = cos;
+    this.rec = rec;
+}
+
+
+addToList = () => {
+    const isValidForm = validateField();
+    if (!isValidForm) {
+        return
+    }
+    const dataObject = getDetailObject();
+    addUserToList(dataObject);
+}
+
+getDetailObject = () => {
+    const name = valueGetterByID('name');
+    const by = valueGetterByID('by');
+    const dif = valueGetterByID('dif');
+    const rec = valueGetterByID('rec');
+    const cos = valueOfCheckboxByName('cos');
+    const detail = new Detail(name, by, dif, cos, rec);
+    valueResetByID('name', 'by', 'dif', 'rec')
+    resetRadioCheckboxValue('cos');
+    return detail
+
+}
+valueGetterByID = (id) => {
+    const value = doc.getElementById(id).value;
+    return value;
+}
+valueOfCheckboxByName = (name) => {
+    const checkbox = doc.querySelectorAll(`[name="${name}"]`);
+    const selectedCheckbox = [];
+    checkbox.forEach(e => {
+        if (e.checked) {
+            selectedCheckbox.push(e.value)
+        }
+    })
+    return selectedCheckbox;
+}
+valueOfRadioByName = (name) => {
+    const radio = doc.querySelectorAll(`[name="${name}"]`);
+    let isChecked = false;
+    radio.forEach(e => {
+        if (e.checked && e.value === 'true' && !isChecked) {
+            isChecked = true
+        }
+    });
+    return isChecked;
+}
+
+valueResetByID = (...id) => {
+    id.forEach(e => {
+        doc.getElementById(e).value = '';
+    })
+}
+
+resetRadioCheckboxValue = (name) => {
+    const checkbox = doc.querySelectorAll(`[name="${name}"]`);
+    checkbox.forEach(e => {
+        e.checked = false;
+    })
+}
+
+var i = 0;
+
+addUserToList = (data) => {
+    const div = doc.createElement('DIV');
+    div.classList.add('card-container');
+	div.id = i.toString();
+    div.innerHTML = `
+                        <div class="profile-info">
+                            <h4>${data.name}</h4>
+                        </div>
+                        <div class="by" style="display:none">
+                            <span class="by-name">${data.by} , ${data.dif}</span>
+                        </div>
+                        <div class="cos" style="display:none"><h4>${data.cos}</h4></div>
+                        <div class="rec" style="display:none">
+                           ${data.rec}
+                        </div>
+                    `;
+					doc.getElementById('list-group').appendChild(div);
+	i++;
+}
+
+// Value Checker
+
+validateField = () => {
+    let isValid = true;
+    const valueField = ['name', 'by', 'dif', 'rec'];
+    const inValidFields = []
+    valueField.forEach(field => {
+        const input = doc.getElementById(field);
+        if (input.value === '' || input.value.length === 0) {
+            input.classList.add('has-error');
+            inValidFields.push(input)
+        } else {
+            input.classList.remove('has-error')
+        }
+    })
+    if (inValidFields.length > 0) {
+        isValid = false;
+        inValidFields[0].focus()
+    }
+
+    return isValid;
+}

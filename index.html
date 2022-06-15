@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Tho</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet"><link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet"><link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-
 <div id="cursor">
   <div class="cursor__circle"></div>
 </div>
@@ -16,7 +15,7 @@
   <div class="panel-wrap animate--none">
 
     <div class="panel" data-x-pos="0"  data-y-pos="0">
-      <span class="panel__nav panel__nav--up js-up">Switched</span>
+      <span class="panel__nav panel__nav--up js-up">Miam</span>
       <span class="panel__nav panel__nav--right-top js-up js-right">up/right</span>
       <span class="panel__nav panel__nav--left-top js-up js-left">up/left</span>
       <span class="panel__nav panel__nav--left js-left">left</span>
@@ -26,6 +25,7 @@
       <span class="panel__nav panel__nav--down js-down">down</span>
       <span class="panel__zoom js-zoom">View All</span>
       <h1>Welcome</h1>
+      <!-- Welcome -->
       <div class="panel__animation-list">
         <span class="js-animation" data-animation="animate--shrink"></span>
       </div>
@@ -37,26 +37,88 @@
       <span class="panel__nav panel__nav--right-down js-down js-right">down/right</span>
       <span class="panel__nav panel__nav--left-down js-down js-left">down/left</span>
       <span class="panel__nav panel__nav--down js-down">Welcome</span>
-      <h1>Switched</h1>
+      <span id="btn"><h1>Miam</h1></span>
+      <!-- Miam -->
+      <div class="container" id="miam">
+        <div class="detail-wrapper">
+            <div class="form-group">
+                <div class="form-label"><h4>Recipe Name</h4></div>
+                <div class="form-field-container">
+                    <input type="text" class="form-field" id="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-label"><h4>Done By</h4></div>
+                <div class="form-field-container">
+                    <input type="text" class="form-field" id="by">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-label"><h4>Difficulty</h4></div>
+                <div class="form-field-container">
+                    <select name="" id="dif" class="form-field">
+                        <option value="">-- Select --</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Meduim">Meduim</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-label"><h4>Cost</h4></div>
+                <div class="form-field-container inline-field">
+                    <label class="inline-field-container">
+                        <input type="checkbox" value="$" name="cos" id="cos">
+                        <span class="checkmark"></span><h4>$</h4>
+                    </label>
+                    <label class="inline-field-container">
+                        <input type="checkbox" value="$$" name="cos" id="cos">
+                        <span class="checkmark"></span><h4>$$</h4>
+                    </label>
+                    <label class="inline-field-container">
+                        <input type="checkbox" value="$$$" name="cos" id="cos">
+                        <span class="checkmark"></span><h4>$$$</h4>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-label"><h4>Recipe</h4></div>
+                <div class="form-field-container">
+                    <textarea name="" id="rec" cols="30" rows="5" class="form-field"></textarea>
+                </div>
+            </div>
+            <div class="form-btn-conatnier">
+                <button class="form-btn" onClick="addToList()">
+                  Add
+                </button>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="card-wrapper" id="list-group">
+
+            </div>
+        </div>
+      </div>
     </div>
 
     <div class="panel" data-x-pos="-1"  data-y-pos="1">
       <span class="panel__nav panel__nav--right-down js-down js-right">Welcome</span>
-      <span class="panel__nav panel__nav--right js-right">Switched</span>
+      <span class="panel__nav panel__nav--right js-right">Miam</span>
       <span class="panel__nav panel__nav--down js-down">down</span>
       <h1>Up Left</h1>
     </div>
 
     <div class="panel" data-x-pos="1"  data-y-pos="1">
       <span class="panel__nav panel__nav--left-down js-down js-left">Welcome</span>
-      <span class="panel__nav panel__nav--left js-left">Switched</span>
+      <span class="panel__nav panel__nav--left js-left">Miam</span>
       <span class="panel__nav panel__nav--down js-down">down</span>
       <h1>Up Right</h1>
     </div>
 
     <div class="panel" data-x-pos="-1"  data-y-pos="0">
       <span class="panel__nav panel__nav--up js-up">up</span>
-      <span class="panel__nav panel__nav--right-top js-up js-right">Switched</span>
+      <span class="panel__nav panel__nav--right-top js-up js-right">Miam</span>
       <span class="panel__nav panel__nav--right js-right">Welcome</span>
       <span class="panel__nav panel__nav--right-down js-down js-right">down/right</span>
       <span class="panel__nav panel__nav--down js-down">down</span>
@@ -79,7 +141,7 @@
 
     <div class="panel" data-x-pos="1"  data-y-pos="0">
       <span class="panel__nav panel__nav--up js-up">up</span>
-      <span class="panel__nav panel__nav--left-top js-up js-left">Switched</span>
+      <span class="panel__nav panel__nav--left-top js-up js-left">Miam</span>
       <span class="panel__nav panel__nav--left js-left">Welcome</span>
       <span class="panel__nav panel__nav--left-down js-down js-left">down/left</span>
       <span class="panel__nav panel__nav--down js-down">down</span>
@@ -103,7 +165,7 @@
   </div>
 </div>
 
-<script  src="./script.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
