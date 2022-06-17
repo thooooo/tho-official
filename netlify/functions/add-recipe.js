@@ -1,15 +1,13 @@
 const { createClient } = require('@supabase/supabase-js');
+const formattedReturn = require('./formattedReturn');
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Save Data
+// Add Data
 
-handler = async (event, context) => {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method Not Allowed" };
-  }
+module.exports = async (event) => {
   const params = new URLSearchParams(event.body);
   const parsedParams = Object.fromEntries(params);
   const {name, by, dif, cos, rec} = parsedParams;
@@ -22,22 +20,15 @@ handler = async (event, context) => {
     rec
   };
 
-// Transfer To Database
-
   try{
     const { data, error } = await supabase
       .from("Recipes")
       .insert([
-        {recipe: recipeData},
-      ]);
-    console.log(data);
-    return {
-      statusCode: 200,
-      body: JSON.stringify(data)
-    }
+      {recipe: recipeData},
+    ]);
+    return formattedReturn(200, data)
   }catch(error){
-    console.log(error);
+    console.error(error);
+    return formattedReturn(500, {})
   }
 };
-
-module.exports = {handler};
