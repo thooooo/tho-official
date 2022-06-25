@@ -7,7 +7,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Get Data
 
-module.exports = async (event) => {
+exports.handler = async (event) => {
     try{
         let { data, error } = await supabase
             .from('Recipes')

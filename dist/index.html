@@ -58,7 +58,7 @@
                 <div class="form-group">
                   <div class="form-label"><h4>Difficulty</h4></div>
                   <div class="form-field-container">
-                      <select id="difficulty" class="form-field" name="difficulty">
+                      <select id="difficulty" class="form-field" name="dif">
                           <option value="">-- Select --</option>
                           <option value="Easy">Easy</option>
                           <option value="Meduim">Meduim</option>
@@ -83,11 +83,17 @@
                         <textarea name="rec" id="rec" cols="30" rows="5" class="form-field"></textarea>
                     </div>
                 </div>
+                <script>
+                  function confirmInput() {
+                    fname = document.forms[0].fname.value;
+                    alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+                  }
+                  </script>
                 <div class="form-btn-conatnier">
-                    <button class="form-btn" type="submit" onClick="addToList()" formaction="./add-recipe">
+                    <button class="form-btn" type="submit" onClick="addToList()" formaction="./add-recipe"> 
                       Add
                     </button>
-                    <button class="form-btn" type="submit" onClick="" formaction="./get-recipe">
+                    <button class="form-btn" type="submit" formaction="./get-recipe">
                       ⟳
                     </button>
                 </div>

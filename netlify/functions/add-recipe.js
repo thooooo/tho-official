@@ -7,7 +7,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Add Data
 
-module.exports = async (event) => {
+exports.handler = async (event) => {
   const params = new URLSearchParams(event.body);
   const parsedParams = Object.fromEntries(params);
   const {name, by, dif, cos, rec} = parsedParams;
