@@ -40,7 +40,7 @@
         <span class="panel__nav panel__nav--down js-down">Welcome</span>
         <span id="btn"><h1>Miam</h1></span>
         <!-- Miam -->
-        <form action="/recipes" method="post">
+        <form method="post">
           <div class="container" id="miam">
             <div class="detail-wrapper">
                 <div class="form-group">
@@ -84,8 +84,11 @@
                     </div>
                 </div>
                 <div class="form-btn-conatnier">
-                    <button class="form-btn" onClick="addToList()">
+                    <button class="form-btn" type="submit" onClick="addToList()" formaction="./add-recipe">
                       Add
+                    </button>
+                    <button class="form-btn" type="submit" onClick="" formaction="./get-recipe">
+                      ⟳
                     </button>
                 </div>
             </div>

@@ -589,7 +589,6 @@ getDetailObject = () => {
     valueResetByID('name', 'by', 'dif', 'rec')
     resetRadioCheckboxValue('cos');
     return detail
-
 }
 valueGetterByID = (id) => {
     const value = doc.getElementById(id).value;

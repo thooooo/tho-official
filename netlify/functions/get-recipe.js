@@ -9,9 +9,9 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 module.exports = async (event) => {
     try{
-        const { data, error } = await supabase
-        .from('Recipes')
-        .select()
+        let { data, error } = await supabase
+            .from('Recipes')
+            .select('*')
         return formattedReturn(200, data);
     }catch(error){
         return formattedReturn(500, {});
