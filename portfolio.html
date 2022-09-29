@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tho</title>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka:700" rel="stylesheet"><link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/jpg" href="Icon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="cursor">
+    <div class="cursor__circle"></div>
+  </div>
+
+  <div class="site-wrap" id="app">
+    <div class="panel-wrap animate--none">
+
+      <div class="panel" data-x-pos="0"  data-y-pos="0">
+        <span class="panel__nav panel__nav--up" onclick="location.href='#popup-article';">About</span>
+        <span class="panel__nav panel__nav--left">Skills</span>
+        <span class="panel__nav panel__nav--right">Projects</span>
+        <span class="panel__nav panel__nav--down">Socials</span>
+        <span class="panel__zoom" onclick="location.href='index.html';">Return</span>
+        <!-- Portfolio -->
+        <h1>Portfolio</h1>
+        <div id="popup-article" class="popup">
+            <div class="popup__container">
+              <a href="#" class="popup__close">
+                <span class="screen-reader">close</span>
+              </a>  
+              <div class="popup__content">
+                <p>Hi, I am Theo (aka Tho)</p>
+                <p>Currently studying I.T at EFREI school in France.</p>
+                <p>I have already developped some websites for societies and for a personal usage like this one.</p>    
+                <p>I have programmed few video games on Unity game engine using C# for personal entertainment and also for my last school wich was EPITA I.T school based also in France.
+                    I know many programmation languages like web development languages (HTML, CSS, JavaScript, SQL PHP), Python, C#. I have also develloped softwares skills like Blender, a 3D modeling software, GIMP a well known
+                    painting software and also the basic Office package (Excel, Word, PowerPoint). 
+                </p>
+                <p>As you may have seen earlier I already worked in team, with others students and also as an intern.</p>
+                <p>Now that you know me better, I will let you discover my projects that are all arround this website !</p>
+                <p>Feel free to explore !</p>
+              </div>
+            </div>
+        </div>
+        <div class="panel__animation-list">
+          <span class="js-animation" data-animation="animate--shrink"></span>
+        </div>
+      </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tho</title>
+  <link href="https://fonts.googleapis.com/css?family=Fredoka:700" rel="stylesheet"><link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/jpg" href="Icon.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="cursor">
+    <div class="cursor__circle"></div>
+  </div>
+
+  <div class="site-wrap" id="app">
+    <div class="panel-wrap animate--none">
+
+      <div class="panel" data-x-pos="0"  data-y-pos="0">
+        <span class="panel__nav panel__nav--up js-up">Portfolio</span>
+        <span class="panel__nav panel__nav--right-top js-up js-right">up/right</span>
+        <span class="panel__nav panel__nav--left-top js-up js-left">up/left</span>
+        <span class="panel__nav panel__nav--left js-left">left</span>
+        <span class="panel__nav panel__nav--right js-right">right</span>
+        <span class="panel__nav panel__nav--right-down js-down js-right">down/right</span>
+        <span class="panel__nav panel__nav--left-down js-down js-left">down/left</span>
+        <span class="panel__nav panel__nav--down js-down">Socials</span>
+        <span class="panel__zoom js-zoom">View All</span>
+        <!-- Welcome -->
+        <h1>Welcome</h1>
+        <div class="panel__animation-list">
+          <span class="js-animation" data-animation="animate--shrink"></span>
+        </div>
+      </div>
+
+      <div class="panel" data-x-pos="0"  data-y-pos="1">
+        <span class="panel__nav panel__nav--left js-left">left</span>
+        <span class="panel__nav panel__nav--right js-right">right</span>
+        <span class="panel__nav panel__nav--right-down js-down js-right">down/right</span>
+        <span class="panel__nav panel__nav--left-down js-down js-left">down/left</span>
+        <span class="panel__nav panel__nav--down js-down">Welcome</span>
+        <span class="panel__zoom" onclick="location.href='portfolio.html';">Go to Portfolio</span>
+        <!-- Portfolio -->
+        <h1>Portfolio</h1>
+      </div>
+
+      <div class="panel" data-x-pos="-1"  data-y-pos="1">
+        <span class="panel__nav panel__nav--right-down js-down js-right">Welcome</span>
+        <span class="panel__nav panel__nav--right js-right">Portfolio</span>
+        <span class="panel__nav panel__nav--down js-down">down</span>
+        <h1>Up Left</h1>
+      </div>
+
+      <div class="panel" data-x-pos="1"  data-y-pos="1">
+        <span class="panel__nav panel__nav--left-down js-down js-left">Welcome</span>
+        <span class="panel__nav panel__nav--left js-left">Portfolio</span>
+        <span class="panel__nav panel__nav--down js-down">down</span>
+        <h1>Up Right</h1>
+      </div>
+
+      <div class="panel" data-x-pos="-1"  data-y-pos="0">
+        <span class="panel__nav panel__nav--up js-up">up</span>
+        <span class="panel__nav panel__nav--right-top js-up js-right">Portfolio</span>
+        <span class="panel__nav panel__nav--right js-right">Welcome</span>
+        <span class="panel__nav panel__nav--right-down js-down js-right">Socials</span>
+        <span class="panel__nav panel__nav--down js-down">down</span>
+        <h1>Left</h1>
+      </div>
+
+      <div class="panel" data-x-pos="-1"  data-y-pos="-1">
+        <span class="panel__nav panel__nav--up js-up">up</span>
+        <span class="panel__nav panel__nav--right-top js-up js-right">Welcome</span>
+        <span class="panel__nav panel__nav--right js-right">Socials</span>
+        <h1>Down Left</h1>
+      </div>
+
+      <div class="panel" data-x-pos="1"  data-y-pos="-1">
+        <span class="panel__nav panel__nav--up js-up">up</span>
+        <span class="panel__nav panel__nav--left-top js-up js-left">Welcome</span>
+        <span class="panel__nav panel__nav--left js-left">Socials</span>
+        <h1>Down Right</h1>
+      </div>
+
+      <div class="panel" data-x-pos="1"  data-y-pos="0">
+        <span class="panel__nav panel__nav--up js-up">up</span>
+        <span class="panel__nav panel__nav--left-top js-up js-left">Portfolio</span>
+        <span class="panel__nav panel__nav--left js-left">Welcome</span>
+        <span class="panel__nav panel__nav--left-down js-down js-left">Socials</span>
+        <span class="panel__nav panel__nav--down js-down">down</span>
+        <h1>Right</h1>
+      </div>
+
+      <div class="panel" data-x-pos="0"  data-y-pos="-1">
+        <span class="panel__nav panel__nav--up js-up">Welcome</span>
+        <span class="panel__nav panel__nav--left-top js-up js-left">up/left</span>
+        <span class="panel__nav panel__nav--right-top js-up js-right">up/right</span>
+        <span class="panel__nav panel__nav--left js-left">left</span>
+        <span class="panel__nav panel__nav--right js-right">right</span>
+        <span class="panel__nav panel__nav--down js-down">down</span>
+        <!--Socials-->
+        <h1>Socials</h1>
+        <ul class="wrapper" style="cursor: none; user-select: none;">
+          <li onclick="window.location.href='https://twitter.com/thotv_';" class="icon twitter">
+            <span class="tooltip" style="cursor: none; user-select: none;">Twitter</span>
+            <span style="pointer-events: none; cursor: none"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" style="scale: 4%; cursor: none"></img></span>
+          </li>
+          <li onclick="window.location.href='https://www.instagram.com/theo_mid';" class="icon instagram">
+            <span class="tooltip" style="cursor: none; user-select: none;">Instagram</span>
+            <span style="pointer-events: none; cursor: none"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png?w=360" style="scale: 4%; cursor: none"></img></span>
+          </li>
+          <li onclick="window.location.href='https://github.com/thooooo';" class="icon github">
+            <span class="tooltip" style="cursor: none; user-select: none;">Github</span>
+            <span style="pointer-events: none; cursor: none"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" style="scale: 4%; cursor: none"></img></span>
+          </li>
+          <li onclick="window.location.href='https://www.youtube.com/channel/UCNk31alGs0OLotRtCj8EcfA';" class="icon youtube">
+            <span class="tooltip" style="cursor: none; user-select: none;">Youtube</span>
+            <span style="pointer-events: none; cursor: none"><img src="https://cdn-icons-png.flaticon.com/512/152/152810.png" style="scale: 4%; cursor: none"></img></span>
+          </li>
+          <li onclick="window.location.href='https://www.linkedin.com/in/th%C3%A9o-midrouillet-905627219';" class="icon linkedin">
+            <span class="tooltip" style="cursor: none; user-select: none;">Linkedin</span>
+            <span style="pointer-events: none; cursor: none"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" style="scale: 4%; cursor: none"></img></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel" data-x-pos="0"  data-y-pos="-2">
+        <span class="panel__nav panel__nav--up js-up">Socials</span>
+        <h1>Down 2</h1>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
