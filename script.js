@@ -117,6 +117,15 @@ function zoomIn()
   removeClass(site, 'show-all');
 }
 
+window.onwheel = e => {
+	if(e.deltaY >= 0){
+	  // Scrolling Down with mouse
+	  zoomOut(e);
+	} else {
+	  // Scrolling Up with mouse
+	  zoomIn(e);
+	}
+  }
 
 // Waves
 

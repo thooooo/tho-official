@@ -346,8 +346,9 @@ h4
 .wrapper {
   display: inline-flex;
   list-style: none;
-  margin-top: 600px;
-  margin-left: 750px;
+  position: relative;
+  top: 60%;
+  left: 36%
 }
 
 .wrapper .icon {
