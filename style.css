@@ -1,5 +1,4 @@
-body 
-{
+body {
   background: linear-gradient(75deg, #acacac, #000000, #000000, #000000, #000000, #acacac);
   background-size: 1800% 1800%;
   -webkit-animation: rainbow 500s ease infinite;
@@ -15,36 +14,30 @@ body
   cursor: none;
 }
 
-@-webkit-keyframes rainbow 
-{
+@-webkit-keyframes rainbow {
   0%{background-position:0% 57%}
   50%{background-position:100% 44%}
   100%{background-position:0% 57%}
 }
-@keyframes rainbow 
-{
+@keyframes rainbow {
   0%{background-position:0% 57%}
   50%{background-position:100% 44%}
   100%{background-position:0% 57%}
 }
 
-.site-wrap 
-{
+.site-wrap {
   transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   scale: 100%;
 }
-.site-wrap.show-all 
-{
+.site-wrap.show-all {
   transform: scale(0.2);
 }
-.panel-wrap 
-{
+.panel-wrap {
   height: 100vh;
-  width: 100vw;
+  width: 100vw
 }
 
-h1 
-{
+h1 {
   font-size: 20vmin;
   margin: 0;
   color: #f35626;
@@ -54,8 +47,7 @@ h1
 	-webkit-animation: hue 100s infinite linear;
 }
 
-h4
-{
+h4 {
   margin: 0;
   color: #f35626;
 	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
@@ -64,31 +56,25 @@ h4
 	-webkit-animation: hue 100s infinite linear;
 }
 
-@keyframes hue 
-{
-  from 
-  {
+@keyframes hue {
+  from {
     -webkit-filter: hue-rotate(0deg);
   }
-  to 
-  {
+  to {
     -webkit-filter: hue-rotate(-360deg);
   }
 }
 
-.panel-wrap 
-{
+.panel-wrap {
   perspective: 2000px;
   transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
-.panel-wrap.animate--shrink
-{
+.panel-wrap.animate--shrink {
   transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0.3s;
 }
 
-.panel 
-{
+.panel {
   height: 100vh;
   position: absolute;
   transition: transform 0.3s cubic-bezier(0.55, 0, 0.1, 1);
@@ -96,8 +82,7 @@ h4
   will-change: transform;
 }
 
-.panel:before 
-{
+.panel:before {
   background-color: transparent;
   bottom: 0;
   content: "";
@@ -110,24 +95,20 @@ h4
   z-index: 2;
 }
 
-.show-all .panel:before 
-{
+.show-all .panel:before {
   pointer-events: all;
 }
 
-.show-all .panel:hover:before 
-{
+.show-all .panel:hover:before {
   background-color: rgba(255, 255, 255, 0.1);
   cursor: none;
 }
 
-.animate--shrink.animate .panel 
-{
+.animate--shrink.animate .panel {
   transform: scale(0.9);
 }
 
-.panel h1 
-{
+.panel h1 {
   cursor: none;
   left: 50%;
   line-height: 1;
@@ -138,48 +119,39 @@ h4
   user-select: none;
 }
 
-.panel[data-x-pos="-2"] 
-{
+.panel[data-x-pos="-2"] {
   left: -200%;
 }
 
-.panel[data-x-pos="-1"] 
-{
+.panel[data-x-pos="-1"] {
   left: -100%;
 }
 
-.panel[data-x-pos="1"] 
-{
+.panel[data-x-pos="1"] {
   left: 100%;
 }
 
-.panel[data-x-pos="2"] 
-{
+.panel[data-x-pos="2"] {
   left: 200%;
 }
 
-.panel[data-y-pos="-2"] 
-{
+.panel[data-y-pos="-2"] {
   top: 200%;
 }
 
-.panel[data-y-pos="-1"] 
-{
+.panel[data-y-pos="-1"] {
   top: 100%;
 }
 
-.panel[data-y-pos="1"] 
-{
+.panel[data-y-pos="1"] {
   top: -100%;
 }
 
-.panel[data-y-pos="2"] 
-{
+.panel[data-y-pos="2"] {
   top: -200%;
 }
 
-.panel__zoom 
-{
+.panel__zoom {
   cursor: none;
   left: 50%;
   opacity: 0.2;
@@ -191,18 +163,15 @@ h4
   z-index: .9;
 }
 
-.panel__zoom:hover 
-{
+.panel__zoom:hover {
   opacity: 1;
 }
 
-.show-all .panel__zoom 
-{
+.show-all .panel__zoom {
   pointer-events: none;
 }
 
-.panel__nav 
-{
+.panel__nav {
   cursor: none;
   opacity: 0.2;
   position: absolute;
@@ -211,67 +180,57 @@ h4
   will-change: opacity;
 }
 
-.panel__nav--up 
-{
+.panel__nav--up {
   left: 50%;
   top: 1rem;
   transform: translateX(-50%);
 }
 
-.panel__nav--left 
-{
+.panel__nav--left {
   left: 1rem;
   top: 50%;
   transform: translateY(-50%) rotate(-90deg) translateX(-100%);
   transform-origin: top left;
 }
 
-.panel__nav--left-top 
-{
+.panel__nav--left-top {
   left: 1rem;
   top: 1rem;
 }
 
-.panel__nav--left-down 
-{
+.panel__nav--left-down {
   bottom: 1rem;
   left: 1rem;
 }
 
-.panel__nav--right 
-{
+.panel__nav--right {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%) rotate(90deg) translateX(100%);
   transform-origin: top right;
 }
 
-.panel__nav--right-top 
-{
+.panel__nav--right-top {
   right: 1rem;
   top: 1rem;
 }
 
-.panel__nav--right-down 
-{
+.panel__nav--right-down {
   bottom: 1rem;
   right: 1rem;
 }
 
-.panel__nav--down 
-{
+.panel__nav--down {
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.panel__nav:hover 
-{
+.panel__nav:hover {
   opacity: 1;
 }
 
-.panel__animation-list 
-{
+.panel__animation-list {
   font-size: 3.3vmin;
   left: 50%;
   position: absolute;
@@ -279,8 +238,7 @@ h4
   transform: translateX(-50%) translateY(-50%) translateY(14vmin);
 }
 
-.panel__animation-list span 
-{
+.panel__animation-list span {
   cursor: none;
   display: inline-block;
   opacity: 0.2;
@@ -289,8 +247,7 @@ h4
   user-select: none;
 }
 
-.panel__animation-list span:after 
-{
+.panel__animation-list span:after {
   border-bottom: 0.3vmin solid transparent;
   bottom: 0;
   content: "";
@@ -302,19 +259,16 @@ h4
 }
 
 .panel__animation-list span.active,
-.panel__animation-list span:hover 
-{
+.panel__animation-list span:hover {
   opacity: 1;
 }
 
 .panel__animation-list span.active:after,
-.panel__animation-list span:hover:after 
-{
+.panel__animation-list span:hover:after {
   border-color: white;
 }
 
-#cursor 
-{
+#cursor {
   position: fixed;
   z-index: 99;
   left: 0;
@@ -324,10 +278,8 @@ h4
   mix-blend-mode: difference;
 }
 
-@media (hover: hover) and (pointer: fine) 
-{
-  .cursor__circle 
-  {
+@media (hover: hover) and (pointer: fine) {
+  .cursor__circle {
     width: 32px;
     height: 32px;
     margin-top: -50%;
@@ -449,7 +401,7 @@ h4
 
 /* Pop-up */
 
-.screen-reader{
+.screen-reader {
   width: var(--screenReaderWidth, 1px) !important;
   height: var(--screenReaderHeight, 1px) !important;
   padding: var(--screenReaderPadding, 0) !important;
@@ -459,12 +411,11 @@ h4
   overflow: var(--screenReaderOverflow, hidden) !important;
 }
 
-
-.popup:not(:target){
+.popup:not(:target) {
   display: none;
 }
 
-.popup:target{
+.popup:target {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -473,28 +424,28 @@ h4
   right: 0;  
 }
 
-.popup::before{
+.popup::before {
   content: "";
   box-sizing: border-box;
   width: 100%;
-  background-color:  #414141;
+  background-color:  #4c4c4c;
   position: fixed;
   left: 0;
   top: 50%;
 }
 
-.popup::after{
+.popup::after {
   content: "";
   width: 0;
   height: 2px;
-  background-color: #414141;
+  background-color: #4c4c4c;
   position: absolute;
   top: 50%;
   left: 0;
   margin-top: -1px;
 }
 
-.popup__container{
+.popup__container {
   box-sizing: border-box;  
   padding: 5% 15%;
   height: calc(100vh - 40px);
@@ -503,7 +454,7 @@ h4
   overscroll-behavior: contain; 
 }
 
-.popup__close{
+.popup__close {
   width: 2rem;
   height: 2rem;
   position: fixed;
@@ -515,65 +466,66 @@ h4
   background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE5IDYuNDFMMTcuNTkgNSAxMiAxMC41OSA2LjQxIDUgNSA2LjQxIDEwLjU5IDEyIDUgMTcuNTkgNi40MSAxOSAxMiAxMy40MSAxNy41OSAxOSAxOSAxNy41OSAxMy40MSAxMnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
 }
 
-.popup::before{
+.popup::before {
   will-change: height, top;
   animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
 }
 
-.popup::after{
+.popup::after {
   will-change: width, opacity;
   animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
 }
 
-@keyframes line-animation{
+@keyframes line-animation {
 
-  0%{
+  0% {
     width: 0;
     opacity: 1;
   }
 
-  99%{
+  99% {
     width: 100%;
     opacity: 1;
   }
 
-  100%{
+  100% {
     width: 100%;
     opacity: 0;
   }  
 }
 
-@keyframes open-animation{
+@keyframes open-animation {
 
-  0%{
+  0% {
     height: 0;
     top: 50%;
   }
 
-  100%{
+  100% {
     height: 100vh;
     top: 0;
   }
 }
 
-.popup__container{
+.popup__container {
   animation: fade .5s ease-out 1.3s both;
 }
 
-@keyframes fade{
-
-  0%{
+@keyframes fade {
+  0% {
     opacity: 0;
   }
 
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-p{
+p {
   margin: 0;
   line-height: 1.5;
+  text-transform: none;
+  font-size: 18px;
   color: #f35626;
 	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
   -webkit-background-clip: text;
@@ -582,11 +534,11 @@ p{
   z-index: -1;
 }
 
-p:nth-child(n+2){
+p:nth-child(n+2) {
   margin-top: 1rem;
 }
 
-.open-popup{
+.open-popup {
   color: rgb(255, 255, 255);
   text-decoration: none;
   text-transform: uppercase;

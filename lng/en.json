@@ -1,0 +1,17 @@
+{
+    "welcome":"Welcome",
+    "view-all":"View all",
+    "right":"Right",
+    "left":"Left",
+    "up":"Up",
+    "down":"Down",
+    "up-right":"Up/Right",
+    "down-right":"Down/Right",
+    "up-left":"Up/Left",
+    "down-left":"Down/Left",
+    "socials":"Socials",
+    "about":"About",
+    "about-text":"<p>Hi, I am Theo (aka Tho)</p><p>Currently studying I.T in a BTS SIO (SLAM) at EFREI school in France and with a year at EPITA engineer I.T school.</p><p>I have already developped some websites for societies and for a personal usage like this one.</p><p>I have programmed few video games on Unity game engine using C# for personal entertainment and also for my last school wich was EPITA I.T school based also in France. I know many programmation languages like web development languages (HTML, CSS, JavaScript, SQL PHP), Python, C#. I have also develloped softwares skills like Blender, a 3D modeling software, GIMP a well known painting software and also the basic Office package (Excel, Word, PowerPoint).</p><p>As you may have seen earlier I already worked in team, with others students and also as an intern.</p><p>Now that you know me better, I will let you discover my projects that are all arround this website !</p><p>Feel free to explore !</p>",
+    "projects":"Projects",
+    "learn":"Learn more"
+}
