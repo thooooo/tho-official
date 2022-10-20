@@ -9,6 +9,7 @@
 </head>
 <body onload="translate('en','lng-tag')">
   <div id="cursor">
+    <div class="cursor__point"></div>
     <div class="cursor__circle"></div>
   </div>
 
@@ -28,10 +29,10 @@
         <!-- Welcome -->
         <h1 lng-tag="welcome">Welcome</h1>  
         <div id="frTranslator" style="position: absolute; top: 70%; right: 48%; z-index: 1">
-          <button>FR</button>
+          <button class="lang">FR</button>
         </div>
         <div id="enTranslator" style="position: absolute; top: 70%; right: 50%; z-index: 1">
-          <button>EN</button>
+          <button class="lang">EN</button>
         </div>
         <div class="panel__animation-list">
           <span class="js-animation" data-animation="animate--shrink"></span>

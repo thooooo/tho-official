@@ -122,7 +122,7 @@ const cursorCircle = cursor.querySelector('.cursor__circle');
 
 const mouse = { x: -100, y: -100 };
 const pos = { x: 0, y: 0 };
-const speed = 0.1;
+const speed = 0.07;
 
 const updateCoordinates = e => {
   mouse.x = e.clientX;
@@ -137,8 +137,8 @@ function getAngle(diffX, diffY) {
 
 function getSqueeze(diffX, diffY) {
   const distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-  const maxSqueeze = 0.15;
-  const accelerator = 1500;
+  const maxSqueeze = 2;
+  const accelerator = 150;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 

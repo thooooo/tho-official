@@ -293,6 +293,21 @@ h4 {
       width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
       height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
+  .cursor__point {
+    width: 5px;
+    height: 5px;
+    margin-bottom: -60%;
+    margin-left: -12%;
+    border-radius: 50%;
+    background-color: #f35626;
+    border: solid 2px #f35626;
+    -webkit-animation: hue 100s infinite linear;
+    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
 } 
 
 .wrapper {
@@ -544,4 +559,17 @@ p:nth-child(n+2) {
   text-transform: uppercase;
   padding: .75rem 1.25rem;
   border: 1px solid;
+}
+
+.lang {
+  font-size: 12px;
+  border-radius: 12px;
+  border-color: #f35626;
+  color: #f35626;
+	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 100s infinite linear;
+  cursor: none; 
+  user-select: none;
 }
