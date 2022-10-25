@@ -573,3 +573,33 @@ p:nth-child(n+2) {
   cursor: none; 
   user-select: none;
 }
+
+.container {
+  margin:auto;
+  margin-top:30vh;
+  width: 210px;
+  height: 140px;
+  position: relative;
+  perspective: 1000px;
+}
+
+#caroussel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+#caroussel figure {
+  display: block;
+  position: absolute;
+  width: 186px;
+  height: 120px;
+  margin:30px;
+  border: 2px solid #222;
+  padding:20px;
+  color:whitesmoke;
+  font-size:30px;
+  font-weight:bold;
+}
