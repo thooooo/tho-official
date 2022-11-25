@@ -537,4 +537,4 @@ $caroussel.click(function(){
 
 $caroussel.css({
 		'transform': 'translateZ(-'+panelSize+'px)'
-	})
+})

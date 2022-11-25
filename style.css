@@ -414,7 +414,7 @@ h4 {
   cursor: none;
 }
 
-/* Pop-up */
+/* Popup */
 
 .screen-reader {
   width: var(--screenReaderWidth, 1px) !important;
@@ -574,6 +574,8 @@ p:nth-child(n+2) {
   user-select: none;
 }
 
+/* Caroussel */
+
 .container {
   margin:auto;
   margin-top:30vh;
@@ -592,14 +594,16 @@ p:nth-child(n+2) {
 }
 
 #caroussel figure {
-  display: block;
+  display: flex;
   position: absolute;
+  align-items: center;
+  justify-content: center;
   width: 186px;
   height: 120px;
-  margin:30px;
+  margin: 30px;
   border: 2px solid #222;
-  padding:20px;
+  padding: 30px;
   color:whitesmoke;
-  font-size:30px;
-  font-weight:bold;
+  font-size: 30px;
+  font-weight: bold;
 }
