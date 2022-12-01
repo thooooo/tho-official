@@ -278,7 +278,6 @@ h4 {
   mix-blend-mode: difference;
 }
 
-@media (hover: hover) and (pointer: fine) {
   .cursor__circle {
     width: 32px;
     height: 32px;
@@ -308,7 +307,7 @@ h4 {
       width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
       height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   }
-} 
+
 
 .wrapper {
   display: inline-flex;
