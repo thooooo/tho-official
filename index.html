@@ -8,6 +8,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
 </head>
 <body onload="translate('en','lng-tag')">
+  
   <!-- Cursor -->
   <div id="cursor">
     <div class="cursor__point"></div>
@@ -22,7 +23,7 @@
         <span class="panel__nav panel__nav--up js-up" lng-tag="about">About</span>
         <span class="panel__nav panel__nav--right-top js-up js-right" lng-tag="up-right">up/right</span>
         <span class="panel__nav panel__nav--left-top js-up js-left" lng-tag="up-left">up/left</span>
-        <span class="panel__nav panel__nav--left js-left" lng-tag="left">left</span>
+        <span class="panel__nav panel__nav--left js-left" lng-tag="skills">Skills</span>
         <span class="panel__nav panel__nav--right js-right" lng-tag="projects">Projects</span>
         <span class="panel__nav panel__nav--right-down js-down js-right" lng-tag="down-right">down/right</span>
         <span class="panel__nav panel__nav--left-down js-down js-left" lng-tag="down-left">down/left</span>
@@ -45,7 +46,7 @@
         <span class="panel__nav panel_nav--left js-left" lng-tag="left">left</span>
         <span class="panel__nav panel__nav--right js-right" lng-tag="right">right</span>
         <span class="panel__nav panel__nav--right-down js-down js-right" lng-tag="projects">Projects</span>
-        <span class="panel__nav panel__nav--left-down js-down js-left" lng-tag="down-left">down/left</span>
+        <span class="panel__nav panel__nav--left-down js-down js-left" lng-tag="skills">Skills</span>
         <span class="panel__nav panel__nav--down js-down" lng-tag="welcome">Welcome</span>
         <span class="panel__zoom" onclick="location.href='#popup-article-about';" lng-tag="learn">Learn more</span>
         <!-- About -->
@@ -66,7 +67,7 @@
       <div class="panel" data-x-pos="-1"  data-y-pos="1">
         <span class="panel__nav panel__nav--right-down js-down js-right" lng-tag="welcome">Welcome</span>
         <span class="panel__nav panel__nav--right js-right" lng-tag="about">About</span>
-        <span class="panel__nav panel__nav--down js-down" lng-tag="down">down</span>
+        <span class="panel__nav panel__nav--down js-down" lng-tag="skills">Skills</span>
         <h1 lng-tag="up-left">Up Left</h1>
       </div>
 
@@ -83,11 +84,34 @@
         <span class="panel__nav panel__nav--right js-right" lng-tag="welcome">Welcome</span>
         <span class="panel__nav panel__nav--right-down js-down js-right" lng-tag="socials">Socials</span>
         <span class="panel__nav panel__nav--down js-down" lng-tag="down">down</span>
-        <h1 lng-tag="left">Left</h1>
+        <span class="panel__zoom" onclick="location.href='#popup-article-skills';" lng-tag="learn">Learn more</span>
+        <!-- Skills -->
+        <h1 lng-tag="skills">Skills</h1>
+          <!-- Popup About -->
+          <div id="popup-article-skills" class="popup">
+          <div class="popup__container">
+            <a href="#" class="popup__close" style="cursor: none; user-select: none;">
+              <span class="screen-reader">close</span>
+            </a>  
+            <div class="popup__content" style="user-select: none;">
+              <div class="container">
+                <div class="bar expert" data-skill="HTML5"></div>
+                <div class="bar advanced" data-skill="CSS3"></div>
+                <div class="bar moreintermediate" data-skill="Unity"></div>
+                <div class="bar moreintermediate" data-skill="C#"></div>
+                <div class="bar intermediate" data-skill="Python"></div>
+                <div class="bar basic" data-skill="SQL"></div>
+                <div class="bar basic" data-skill="PHP"></div>
+                <div class="bar learning" data-skill="OCAML"></div>
+                <div class="bar learning" data-skill="Blender"></div>
+              </div>
+            </div>
+        </div>
+      </div>
       </div>
 
       <div class="panel" data-x-pos="-1"  data-y-pos="-1">
-        <span class="panel__nav panel__nav--up js-up" lng-tag="up">up</span>
+        <span class="panel__nav panel__nav--up js-up" lng-tag="skills">Skills</span>
         <span class="panel__nav panel__nav--right-top js-up js-right" lng-tag="welcome">Welcome</span>
         <span class="panel__nav panel__nav--right js-right" lng-tag="socials">Socials</span>
         <h1 lng-tag="down-left">Down Left</h1>
@@ -118,7 +142,7 @@
             <div class="popup__content" style="user-select: none;">
               <div id="contentContainer" class="trans3d"> 
                 <section id="carouselContainer" class="trans3d">
-                  <figure id="item1" class="carouselItem trans3d"><a href="https://youtube.com/playlist?list=PLJiL7kboTMRsdCYs01NAnwldtklkWnn1r" style="cursor: none; user-select: none;"><div class="carouselItemInner trans3d" style="background-image: url('https://i9.ytimg.com/vi_webp/CFBc5Kb9i5o/mq1.webp?sqp=CJDaoZwG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFcgXyhlMA8=&rs=AOn4CLATh30oFINZ5HncWGmRLfi4bJenNg'); background-size: contain;"><p>Hack'n'Slash</p></div></a></figure>
+                  <figure id="item1" class="carouselItem trans3d"><a href="https://youtube.com/playlist?list=PLJiL7kboTMRsdCYs01NAnwldtklkWnn1r" style="cursor: none; user-select: none;"><div class="carouselItemInner trans3d" style="background-image: url('images/HacknSlashImage.png'); background-size: contain;"><p>Hack'n'Slash</p></div></a></figure>
                   <figure id="item2" class="carouselItem trans3d"><a href="https://swarwerth.github.io/switched.github.io/en/index.html" style="cursor: none; user-select: none;"><div class="carouselItemInner trans3d" style="background-image: url('https://swarwerth.github.io/switched.github.io/assets/img/screens/1.png'); background-size: contain;"><p>Switched</p></div></a></figure>
                   <figure id="item3" class="carouselItem trans3d"><a href="https://procyon-official.netlify.app/" style="cursor: none; user-select: none;"><div class="carouselItemInner trans3d" style="background-image: url('images/ProcyonImage.png'); background-size: contain;"><p>Procyon SARL</p></div></a></figure>
                   <figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><p>4</p></div></figure>
@@ -132,7 +156,7 @@
 
       <div class="panel" data-x-pos="0"  data-y-pos="-1">
         <span class="panel__nav panel__nav--up js-up" lng-tag="welcome">Welcome</span>
-        <span class="panel__nav panel__nav--left-top js-up js-left" lng-tag="up-left">up/left</span>
+        <span class="panel__nav panel__nav--left-top js-up js-left" lng-tag="skills">Skills</span>
         <span class="panel__nav panel__nav--right-top js-up js-right" lng-tag="projects">Projects</span>
         <span class="panel__nav panel__nav--left js-left" lng-tag="left">left</span>
         <span class="panel__nav panel__nav--right js-right" lng-tag="right">right</span>

@@ -265,7 +265,7 @@ h4 {
 
 .panel__animation-list span.active:after,
 .panel__animation-list span:hover:after {
-  border-color: white;
+  border-color: #fff;
 }
 
 #cursor {
@@ -278,36 +278,44 @@ h4 {
   mix-blend-mode: difference;
 }
 
-  .cursor__circle {
-    width: 32px;
-    height: 32px;
-    margin-top: -50%;
-    margin-left: -50%;
-    border-radius: 50%;
-    border: solid 2px #f35626;
-    -webkit-animation: hue 100s infinite linear;
-    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-  .cursor__point {
-    width: 5px;
-    height: 5px;
-    margin-bottom: -60%;
-    margin-left: -12%;
-    border-radius: 50%;
-    background-color: #f35626;
-    border: solid 2px #f35626;
-    -webkit-animation: hue 100s infinite linear;
-    transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
-      height 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  }
+.cursor__circle {
+  width: 32px;
+  height: 32px;
+  margin-top: -50%;
+  margin-left: -50%;
+  border-radius: 50%;
+  border: solid 2px #f35626;
+  -webkit-animation: hue 100s infinite linear;
+}
 
+.cursor__point {
+  width: 5px;
+  height: 5px;
+  margin-bottom: -60%;
+  margin-left: -12%;
+  border-radius: 50%;
+  background-color: #f35626;
+  border: solid 2px #f35626;
+  -webkit-animation: hue 100s infinite linear;
+}
+
+.cursoronclick {
+  position: fixed;
+  top: -16px;
+  width: 32px;
+  height: 32px;
+  margin-bottom: -50%;
+  margin-left: -50%;
+  opacity: 0.5;
+  -webkit-animation: hue 100s infinite linear;
+}
+
+.cursorhover {
+  width: 44px;
+  height: 44px;
+  margin-bottom: -50%;
+  margin-left: -50%;
+}
 
 .wrapper {
   display: inline-flex;
@@ -641,3 +649,78 @@ p:nth-child(n+2) {
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 100s infinite linear;
 }
+
+/* Skills Bar */
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar {
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  width: 500px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
+	-webkit-animation: hue 100s infinite linear;
+}
+
+.bar::before{
+  content:  attr(data-skill);
+  background-color: #000000b1;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.learning::before{
+  width: calc(20% - 10px);
+}
+.bar.basic::before{
+  width: calc(40% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(60% - 10px);
+}
+.bar.moreintermediate::before{
+  width: calc(75% - 10px);
+}
+.bar.advanced::before{
+  width: calc(80% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
+
+/* Hovering */

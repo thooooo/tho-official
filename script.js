@@ -119,6 +119,8 @@ window.onwheel = e => {
 
 const cursor = document.querySelector('#cursor');
 const cursorCircle = cursor.querySelector('.cursor__circle');
+const cursorPoint = cursor.querySelector('.cursor__point');
+
 
 const mouse = { x: -100, y: -100 };
 const pos = { x: 0, y: 0 };
@@ -181,6 +183,53 @@ cursorModifiers.forEach(curosrModifier => {
     cursor.classList.remove(className);
   });
 });
+
+// Cursor on click
+
+document.addEventListener('mousedown', function(){
+	cursorCircle.classList.add('click')
+	cursorCircle.classList.remove('cursorhover')
+	cursorPoint.classList.add('cursoronclick')
+});
+  
+document.addEventListener('mouseup', function(){
+	cursorCircle.classList.remove('click')
+	cursorCircle.classList.remove('cursorhover')
+	cursorPoint.classList.remove('cursoronclick')
+});
+
+// Cursor on hover span
+
+document.querySelectorAll('span').forEach(item => {
+	item.addEventListener('mouseover', () => {
+		cursorCircle.classList.add('cursorhover');
+	});
+	item.addEventListener('mouseleave', () => {
+		cursorCircle.classList.remove('cursorhover');
+	});
+})
+
+// Cursor on hover button
+
+document.querySelectorAll('button').forEach(item => {
+	item.addEventListener('mouseover', () => {
+		cursorCircle.classList.add('cursorhover');
+	});
+	item.addEventListener('mouseleave', () => {
+		cursorCircle.classList.remove('cursorhover');
+	});
+})
+
+// Cursor on hover a
+
+document.querySelectorAll('a').forEach(item => {
+	item.addEventListener('mouseover', () => {
+		cursorCircle.classList.add('cursorhover');
+	});
+	item.addEventListener('mouseleave', () => {
+		cursorCircle.classList.remove('cursorhover');
+	});
+})
 
 // Waves
 
