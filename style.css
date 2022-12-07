@@ -1,3 +1,5 @@
+/* Init */
+
 body {
   background: linear-gradient(75deg, #acacac, #000000, #000000, #000000, #000000, #acacac);
   background-size: 1800% 1800%;
@@ -64,6 +66,8 @@ h4 {
     -webkit-filter: hue-rotate(-360deg);
   }
 }
+
+/* Nav */
 
 .panel-wrap {
   perspective: 2000px;
@@ -268,6 +272,8 @@ h4 {
   border-color: #fff;
 }
 
+/* Cursors */
+
 #cursor {
   position: fixed;
   z-index: 99;
@@ -310,12 +316,13 @@ h4 {
   -webkit-animation: hue 100s infinite linear;
 }
 
+/* Socials */
+
 .wrapper {
   display: inline-flex;
   list-style: none;
   position: relative;
   top: 60%;
-  left: 36%
 }
 
 .wrapper .icon {
@@ -716,4 +723,16 @@ p:nth-child(n+2) {
   width: calc(100% - 10px);
 }
 
-/* Hovering */
+/* Responsive */
+
+@media screen and (max-width: 1920px) {
+  .wrapper {
+    left: 39%;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .wrapper {
+    left: 36%;
+  }
+}
