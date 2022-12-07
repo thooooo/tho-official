@@ -188,24 +188,24 @@ cursorModifiers.forEach(curosrModifier => {
 
 document.addEventListener('mousedown', function(){
 	cursorCircle.classList.add('click')
-	cursorCircle.classList.remove('cursorhover')
-	cursorPoint.classList.add('cursoronclick')
+	cursorPoint.classList.remove('cursorhover')
+	cursorCircle.classList.add('cursoronclick')
 });
   
 document.addEventListener('mouseup', function(){
 	cursorCircle.classList.remove('click')
-	cursorCircle.classList.remove('cursorhover')
-	cursorPoint.classList.remove('cursoronclick')
+	cursorPoint.classList.remove('cursorhover')
+	cursorCircle.classList.remove('cursoronclick')
 });
 
 // Cursor on hover span
 
 document.querySelectorAll('span').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorCircle.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhover');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorCircle.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhover');
 	});
 })
 
@@ -213,10 +213,10 @@ document.querySelectorAll('span').forEach(item => {
 
 document.querySelectorAll('button').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorCircle.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhover');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorCircle.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhover');
 	});
 })
 
@@ -224,10 +224,10 @@ document.querySelectorAll('button').forEach(item => {
 
 document.querySelectorAll('a').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorCircle.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhover');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorCircle.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhover');
 	});
 })
 

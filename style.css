@@ -299,7 +299,7 @@ h4 {
   -webkit-animation: hue 100s infinite linear;
 }
 
-.cursoronclick {
+.cursorhover {
   position: fixed;
   top: -16px;
   width: 32px;
@@ -310,7 +310,7 @@ h4 {
   -webkit-animation: hue 100s infinite linear;
 }
 
-.cursorhover {
+.cursoronclick {
   width: 44px;
   height: 44px;
   margin-bottom: -50%;
