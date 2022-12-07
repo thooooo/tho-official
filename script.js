@@ -124,7 +124,7 @@ const cursorPoint = cursor.querySelector('.cursor__point');
 
 const mouse = { x: -100, y: -100 };
 const pos = { x: 0, y: 0 };
-const speed = 0.07;
+const speed = 0.1;
 
 const updateCoordinates = e => {
   mouse.x = e.clientX;
@@ -139,8 +139,8 @@ function getAngle(diffX, diffY) {
 
 function getSqueeze(diffX, diffY) {
   const distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-  const maxSqueeze = 2;
-  const accelerator = 150;
+  const maxSqueeze = 0.5;
+  const accelerator = 100;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 
@@ -188,24 +188,22 @@ cursorModifiers.forEach(curosrModifier => {
 
 document.addEventListener('mousedown', function(){
 	cursorCircle.classList.add('click')
-	cursorPoint.classList.remove('cursorhover')
-	cursorCircle.classList.add('cursoronclick')
+	cursorPoint.classList.add('cursorhoverclick')
 });
   
 document.addEventListener('mouseup', function(){
 	cursorCircle.classList.remove('click')
-	cursorPoint.classList.remove('cursorhover')
-	cursorCircle.classList.remove('cursoronclick')
+	cursorPoint.classList.remove('cursorhoverclick')
 });
 
 // Cursor on hover span
 
 document.querySelectorAll('span').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorPoint.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhoverclick');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorPoint.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhoverclick');
 	});
 })
 
@@ -213,10 +211,10 @@ document.querySelectorAll('span').forEach(item => {
 
 document.querySelectorAll('button').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorPoint.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhoverclick');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorPoint.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhoverclick');
 	});
 })
 
@@ -224,10 +222,21 @@ document.querySelectorAll('button').forEach(item => {
 
 document.querySelectorAll('a').forEach(item => {
 	item.addEventListener('mouseover', () => {
-		cursorPoint.classList.add('cursorhover');
+		cursorPoint.classList.add('cursorhoverclick');
 	});
 	item.addEventListener('mouseleave', () => {
-		cursorPoint.classList.remove('cursorhover');
+		cursorPoint.classList.remove('cursorhoverclick');
+	});
+})
+
+// Cursor on hover li
+
+document.querySelectorAll('li').forEach(item => {
+	item.addEventListener('mouseover', () => {
+		cursorPoint.classList.add('cursorhoverclick');
+	});
+	item.addEventListener('mouseleave', () => {
+		cursorPoint.classList.remove('cursorhoverclick');
 	});
 })
 
