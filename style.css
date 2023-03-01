@@ -40,7 +40,7 @@ body {
 }
 
 h1 {
-  font-size: 20vmin;
+  font-size: 10vw;
   margin: 0;
   color: #f35626;
 	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
