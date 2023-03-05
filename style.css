@@ -2,7 +2,7 @@
 
 body {
   background: linear-gradient(75deg, #2c2c2c, #303030, #181818, #181818, #303030, #2c2c2c);
-  background-size: 1800% 1800%;
+  background-size: 3000% 3000%;
   -webkit-animation: rainbow 500s ease infinite;
   animation: rainbow 500s ease infinite;
   background-repeat: repeat;
@@ -33,15 +33,6 @@ h1 {
   margin: 0;
   color: #f35626;
 	background-image: -webkit-linear-gradient(120deg, #8f695d, #ac9069);
-  -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-webkit-animation: hue 100s infinite linear;
-}
-
-h4 {
-  margin: 0;
-  color: #f35626;
-	background-image: -webkit-linear-gradient(120deg, #f35626, #feab3a);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 100s infinite linear;
@@ -84,7 +75,7 @@ h4 {
 }
 
 .show-all .panel:hover:before {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff1a;
   cursor: none;
 }
 
@@ -174,46 +165,46 @@ h4 {
 
 .panel__nav--up {
   left: 50%;
-  top: 1rem;
+  top: 1vw;
   transform: translateX(-50%);
 }
 
 .panel__nav--left {
-  left: 1rem;
+  left: 1vw;
   top: 50%;
   transform: translateY(-50%) rotate(-90deg) translateX(-100%);
   transform-origin: top left;
 }
 
 .panel__nav--left-top {
-  left: 1rem;
-  top: 1rem;
+  left: 1vw;
+  top: 1vw;
 }
 
 .panel__nav--left-down {
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 1vw;
+  left: 1vw;
 }
 
 .panel__nav--right {
-  right: 1rem;
+  right: 1vw;
   top: 50%;
   transform: translateY(-50%) rotate(90deg) translateX(100%);
   transform-origin: top right;
 }
 
 .panel__nav--right-top {
-  right: 1rem;
-  top: 1rem;
+  right: 1vw;
+  top: 1vw;
 }
 
 .panel__nav--right-down {
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1vw;
+  right: 1vw;
 }
 
 .panel__nav--down {
-  bottom: 1rem;
+  bottom: 3vw;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -438,7 +429,7 @@ h4 {
   content: "";
   box-sizing: border-box;
   width: 100%;
-  background-color: #454545;
+  background-color: #4545458c;
   position: fixed;
   left: 0;
   top: 50%;

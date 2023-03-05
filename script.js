@@ -260,11 +260,11 @@ function translate(lng, tagAttr) {
 $(doc).ready(function() {
   	//This is id of HTML element (English) with attribute lng-tag
 	$("#enTranslator").click(function() {	
-    	translate('en', 'lng-tag');
+		translate('en', 'lng-tag');
 	});
   	//This is id of HTML element (French) with attribute lng-tag
 	$("#frTranslator").click(function() {
-    	translate('fr', 'lng-tag');
+		translate('fr', 'lng-tag');
 	});
 });
 
