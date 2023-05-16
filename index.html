@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Tho</title>
   <link href="https://fonts.googleapis.com/css?family=Fredoka:700" rel="stylesheet"><link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/jpg" href="Icon.png"/>
+  <link rel="icon" type="image/jpg" href="images/Icon.png"/>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
 </head>
 <body onload="translate('en','lng-tag')">
@@ -81,10 +81,10 @@
                 <span class="screen-reader">close</span>
               </a>  
               <div class="popup__content" style="user-select: none;" lng-tag="about-text">
-                  <!-- Text -->
+                <!-- Text -->
               </div>
           </div>
-      </div>
+        </div>
       </div>
 
       <!-- <div class="panel" data-x-pos="-1"  data-y-pos="1">
@@ -110,23 +110,84 @@
         <span class="panel__zoom" onclick="location.href='#popup-article-skills';" lng-tag="learn">Learn more</span>
         <!-- Skills -->
         <h1 lng-tag="skills">Skills</h1>
-          <!-- Popup About -->
+          <!-- Popup Skills -->
           <div id="popup-article-skills" class="popup">
           <div class="popup__container">
             <a href="#" class="popup__close" style="cursor: none; user-select: none;">
               <span class="screen-reader">close</span>
             </a>  
             <div class="popup__content" style="user-select: none;">
-              <div class="container">
-                <div class="bar expert" data-skill="HTML5"></div>
-                <div class="bar advanced" data-skill="CSS3"></div>
-                <div class="bar moreintermediate" data-skill="Unity"></div>
-                <div class="bar moreintermediate" data-skill="C#"></div>
-                <div class="bar intermediate" data-skill="Python"></div>
-                <div class="bar basic" data-skill="SQL"></div>
-                <div class="bar basic" data-skill="PHP"></div>
-                <div class="bar learning" data-skill="OCAML"></div>
-                <div class="bar learning" data-skill="Blender"></div>
+              <div class="grid-container">
+                <div class="skill-card">
+                  <header class="skill-card_header html"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML5 Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">html</h3><span class="skill-card_duration html">5 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>Semantique</li>
+                      <li>SVG</li>
+                      <li>Canvas</li>
+                      <li>Web app</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="skill-card">
+                  <header class="skill-card_header css"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS3 Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">css</h3><span class="skill-card_duration css">5 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>UI/UX Design</li>
+                      <li>Animation</li>
+                      <li>Transition</li>
+                      <li>Responsive</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="skill-card">
+                  <header class="skill-card_header js"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JS Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">javascript</h3><span class="skill-card_duration js">4 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>Animation</li>
+                      <li>UI/UX Design</li>
+                      <li>Web app</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="skill-card">
+                  <header class="skill-card_header csharp"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" alt="CSHARP Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">c#</h3><span class="skill-card_duration csharp">4 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>UI</li>
+                      <li>Video Games</li>
+                      <li>AI</li>
+                      <li>Machine learning</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="skill-card">
+                  <header class="skill-card_header python"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="PYTHON Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">Python</h3><span class="skill-card_duration python">6 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>AI</li>
+                      <li>Machine learning</li>
+                      <li>Graphs</li>
+                      <li>Recursion</li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="skill-card">
+                  <header class="skill-card_header git"><img class="skill-card_icon" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="GIT Logo"></header>
+                  <section class="skill-card_body">
+                    <h3 class="skill-card_title">Git</h3><span class="skill-card_duration git">4 years</span>
+                    <ul class="skill-card_knowledge">
+                      <li>Repositories</li>
+                      <li>Github / Gitlab</li>
+                      <li>Team Work</li>
+                    </ul>
+                  </section>
+                </div>
               </div>
             </div>
         </div>
@@ -173,7 +234,7 @@
                 </section>
                 </div>
             </div>
-        </div>
+          </div>
       </div>
       </div>
 
