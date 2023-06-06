@@ -643,7 +643,7 @@ p:nth-child(n+2) {
   grid-template-columns: auto auto auto;
   top: 50%;
   left: 50%;
-  transform: translate(8%, -50%);
+  transform: translate(8%, -40%);
 }
 
 .skill-card {

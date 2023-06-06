@@ -1,4 +1,5 @@
 // Global
+
 var win = window,
     doc = document;
 
@@ -36,6 +37,7 @@ var nav_up = doc.getElementsByClassName('js-up'),
 var animation = doc.getElementsByClassName('js-animation');
 
 // Tracking
+
 var pos_x = 0,
     pos_y = 0;
 
