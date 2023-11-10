@@ -321,12 +321,13 @@ h1 {
   display: inline-flex;
   list-style: none;
   position: relative;
-  top: 60%;
+  justify-content: center;
+  top: 60%; 
 }
 
 .wrapper .icon {
   position: relative;
-  background: #ffffff71;
+  background: #ffffff00;
   border-radius: 50%;
   padding: 15px;
   margin: 10px;
@@ -396,10 +397,18 @@ h1 {
   cursor: none;
 }
 
+.wrapper .tiktok:hover,
+.wrapper .tiktok:hover .tooltip,
+.wrapper .tiktok:hover .tooltip::before {
+  background-image: linear-gradient(120deg, #1fa4cd, #fa5858);
+  color: #ffffff;
+  cursor: none; 
+}
+
 .wrapper .github:hover,
 .wrapper .github:hover .tooltip,
 .wrapper .github:hover .tooltip::before {
-  background: #ffffffa4;
+  background: #272424a4;
   color: #ffffff;
   cursor: none;
 }
@@ -408,6 +417,14 @@ h1 {
 .wrapper .youtube:hover .tooltip,
 .wrapper .youtube:hover .tooltip::before {
   background: #cd1f1f8a;
+  color: #ffffff;
+  cursor: none;
+}
+
+.wrapper .twitch:hover,
+.wrapper .twitch:hover .tooltip,
+.wrapper .twitch:hover .tooltip::before {
+  background: #b01fcd8a;
   color: #ffffff;
   cursor: none;
 }
@@ -928,27 +945,11 @@ header.git {
   }
 }
 
-/* Circles */
-
-@keyframes bubble {
-  0%{
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
-  }
-
-  100%{
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
-  }
-}
-
 /* Responsive */
 
 @media screen and (max-width: 1920px) {
   .wrapper {
-    left: 39%;
+    left: 36%;
   }
 }
 
