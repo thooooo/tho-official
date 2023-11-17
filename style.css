@@ -6,6 +6,7 @@
   --dark: #fff;
   --light: #000000;
 }
+
 @media (prefers-color-scheme: dark) {
 	:root {
 		--clr-background: var(--dark-clr);
@@ -22,6 +23,8 @@
   --clr-foreground: var(--dark);
 }
 
+/* Body */
+
 body {
   background: var(--clr-background);
   background-size: 1000% 1000%;
@@ -36,16 +39,19 @@ body {
   text-transform: uppercase;
   cursor: none;
 }
+
 .site-wrap {
   transition: transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   scale: 100%;
 }
+
 .site-wrap.show-all {
   transform: scale(0.2);
 }
+
 .panel-wrap {
   height: 100vh;
-  width: 100vw
+  width: 100vw;
 }
 
 h1 {
@@ -488,7 +494,7 @@ h1 {
   padding: 5% 15%;
   height: calc(100vh - 40px);
   margin: auto; 
-  overflow: auto; 
+  overflow: hidden; 
   overscroll-behavior: contain; 
 }
 
