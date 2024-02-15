@@ -1,10 +1,10 @@
 /* Init */
 
 :root {
-	--dark-clr: linear-gradient(75deg, #473d27, #3a1d30, #1d1e3b, #343f1f, #442921);
+	--dark-clr: linear-gradient(75deg, #635537, #5e314e, #383a72, #536336, #7e5245);
 	--light-clr: linear-gradient(75deg, #ffe5b0, #fface1, #babdfd, #ebffc4, #ffc3ae);
   --dark: #fff;
-  --light: #000;
+  --light: #000000;
   --popup-dark: #333333d8;
   --popup-light: #a0a0a0bd;
 }
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--clr-background: var(--dark-clr);
-		--clr-foreground: var(--light-clr);
+		--clr-foreground: var(--light-clr); 
     --clr-popup: var(--popup-dark);
 	}
 }
@@ -161,8 +161,7 @@ h1 {
   cursor: none;
   left: 50%;
   position: absolute;
-  opacity: 0.8;
-  background-image: -webkit-linear-gradient(120deg, #a52600, #b16701);
+  background-image: -webkit-linear-gradient(120deg, #e63600, #e48500);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 100s infinite linear;
@@ -174,7 +173,7 @@ h1 {
 }
 
 .panel__zoom:hover {
-  opacity: 1;
+  scale: 102%;
 }
 
 .show-all .panel__zoom {
@@ -184,8 +183,7 @@ h1 {
 .panel__nav {
   cursor: none;
   position: absolute;
-  opacity: 0.8;
-  background-image: -webkit-linear-gradient(120deg, #a52600, #b16701);
+  background-image: -webkit-linear-gradient(120deg, #e63600, #e48500);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-animation: hue 100s infinite linear;
@@ -241,7 +239,7 @@ h1 {
 }
 
 .panel__nav:hover {
-  opacity: 1;
+  scale: 110%;
 }
 
 .panel__animation-list {
@@ -580,7 +578,6 @@ p:nth-child(n+2) {
   border-radius: 12px;
   border-color: #f35626;
   color: #f35626;
-  opacity: 0.8;
   background-image: -webkit-linear-gradient(120deg, #a52600, #b16701);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
