@@ -28,6 +28,22 @@
   --clr-popup: var(--popup-dark);
 }
 
+.hue:not(:where(:hover, :active)) {
+  animation: animated-filter 3s infinite;
+}
+
+@keyframes animated-filter {
+  0% {
+    filter: hue-rotate( 0deg)
+  }
+  50% {
+    filter: hue-rotate(360deg)
+  }
+  100% {
+    filter: hue-rotate( 0deg)
+  }
+}
+
 /* Body */
 
 body {
@@ -324,7 +340,40 @@ h1 {
   -webkit-animation: hue 100s infinite linear;
 }
 
-/* Socials */
+/* Socials & Cv */
+
+#cv {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  width: 50vw;
+  height: 80vh;
+}
+
+.cv {
+  display: inline-flex;
+  list-style: none;
+  position: relative;
+  justify-content: center;
+  top: 0% !important;
+  left: -2% !important;
+}
+
+.cv h2 {
+  margin-right: 1vw;
+  background-image: -webkit-linear-gradient(120deg, #e63600, #e48500);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 100s infinite linear;
+}
+
+.wrapper .cv:hover,
+.wrapper .cv:hover .tooltip,
+.wrapper .cv:hover .tooltip::before {
+  background: -webkit-linear-gradient(120deg, #d4d3d3, #2e2e2e);
+  color: var(--clr-foreground);
+  cursor: none;
+}
 
 .wrapper {
   display: inline-flex;

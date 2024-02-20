@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Portfolio - Théo MIDROUILLET</title>
   <link href="https://fonts.googleapis.com/css?family=Fredoka:700" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
-  <link rel="icon" type="image/png" href="images/Icon.png"/>
+  <link class="hue" rel="icon" type="image/gif" href="images/Icon.gif"/>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
 </head>
 <body onload="translate('en','lng-tag')">
@@ -69,6 +69,26 @@
               <div class="popup__content" style="user-select: none;" lng-tag="about-text">
                 <!-- Text -->
               </div>
+              <ul class="wrapper cv" style="cursor: none; user-select: none;">
+                <h2>Cv <i class="fa-solid fa-arrow-right"></i></h2>
+                <li onclick="toggleCv()" style="cursor: none; user-select: none;" class="icon cv"> 
+                  <span class="tooltip" style="cursor: none; user-select: none;">CV</span>
+                  <span style="pointer-events: none; cursor: none"><i class="fa-solid fa-file" style="color:  var(--clr-foreground);"></i>
+                </li>
+              </ul>
+              <iframe id="cv" src="/utils/CV.pdf" width="100%" height="100%" style="display: none"></iframe>
+              <script>
+                const cv = document.getElementById("cv");
+
+                function toggleCv() {
+                  if (cv.style.display == "none") {
+                    cv.style.display = "block";
+                  }
+                  else {
+                    cv.style.display = "none";
+                  }
+                }
+            </script>
           </div>
         </div>
       </div>

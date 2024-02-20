@@ -1,0 +1,5 @@
+void Fesse{
+    for (int i = 0; i < 100; i++) Console.Write("Arretes de me toucher les fesses!");
+}
+
+Fesse();
