@@ -111,11 +111,7 @@ export default class ProjectsSection
                         x: 3.2,
                         y: 1.5
                     }
-                },
-                distinctions:
-                [
-                    { type: 'fwa', x: 3.95, y: 4.15 }
-                ]
+                }
             },
             {
                 name: 'Switched',
@@ -136,12 +132,7 @@ export default class ProjectsSection
                         x: 3.2,
                         y: 1.5
                     }
-                },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 }
-                ]
+                }
             },
             {
                 name: 'Klab',
@@ -162,10 +153,7 @@ export default class ProjectsSection
                         x: 3.2,
                         y: 1.5
                     }
-                },
-                distinctions:
-                [
-                ]
+                }
             },
             {
                 name: 'Plage',
@@ -189,10 +177,7 @@ export default class ProjectsSection
                         y: 1.5
                     }
                 },
-                floorTexture: this.resources.items.projectsPlageFloorTexture,
-                distinctions:
-                [
-                ]
+                floorTexture: this.resources.items.projectsPlageFloorTexture
             }
         ]
     }
