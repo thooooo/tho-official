@@ -108,6 +108,10 @@ export default class InformationSection
             {
                 href: 'mailto:theo.midrouillet@gmail.com',
                 labelTexture: this.resources.items.informationContactMailLabelTexture
+            },
+            {
+                href: 'https://drive.google.com/file/d/1hXMjUPqKjFmpOaB8VppRNhaYrSyD5Ruj/view?usp=sharing',
+                labelTexture: this.resources.items.informationContactCVLabelTexture
             }
         ]
 

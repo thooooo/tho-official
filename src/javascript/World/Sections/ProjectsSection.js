@@ -147,7 +147,7 @@ export default class ProjectsSection
                 ],
                 link:
                 {
-                    href: 'https://www.economie.gouv.fr/dgfip',
+                    href: 'https://drive.google.com/drive/folders/1rzjDlgU5LUxaqAMozTkwMJ1_I-mUuRhP?usp=sharing',
                     x: - 4.8,
                     y: - 4,
                     halfExtents:

@@ -126,6 +126,7 @@ export default class Resources extends EventEmitter
                 { name: 'informationContactGithubLabel', source: './models/information/static/contactGithubLabel.png', type: 'texture' },
                 { name: 'informationContactLinkedinLabel', source: './models/information/static/contactLinkedinLabel.png', type: 'texture' },
                 { name: 'informationContactMailLabel', source: './models/information/static/contactMailLabel.png', type: 'texture' },
+                { name: 'informationContactCVLabel', source: './models/information/static/contactCvLabel.png', type: 'texture' },
 
                 { name: 'informationActivities', source: './models/information/static/activitiesFR.png', type: 'texture' },
 
@@ -294,6 +295,7 @@ export default class Resources extends EventEmitter
                 { name: 'informationContactGithubLabel', source: './models/information/static/contactGithubLabel.png', type: 'texture' },
                 { name: 'informationContactLinkedinLabel', source: './models/information/static/contactLinkedinLabel.png', type: 'texture' },
                 { name: 'informationContactMailLabel', source: './models/information/static/contactMailLabel.png', type: 'texture' },
+                { name: 'informationContactCVLabel', source: './models/information/static/contactCvLabel.png', type: 'texture' },
     
                 { name: 'informationActivities', source: './models/information/static/activities.png', type: 'texture' },
     
