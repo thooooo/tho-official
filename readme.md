@@ -1,3 +1,3 @@
 # MY PORTFOLIO
 
-https://tho-official.netlify.app/
+https://joyb.netlify.app/
