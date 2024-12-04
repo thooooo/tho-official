@@ -71,28 +71,6 @@ export default class ProjectsSection
     {
         this.list = [
             {
-                name: 'Procyon SARL',
-                imageSources:
-                [
-                    './models/projects/procyon/slideA.jpg',
-                    './models/projects/procyon/slideB.jpg',
-                    './models/projects/procyon/slideC.jpg',
-                    './models/projects/procyon/slideD.jpg',
-                ],
-                floorTexture: this.resources.items.projectsProcyonFloorTexture,
-                link:
-                {
-                    href: 'https://procyon-official.netlify.app',
-                    x: - 4.8,
-                    y: - 3,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                }
-            },
-            {
                 name: 'Switched',
                 imageSources:
                 [
@@ -105,58 +83,13 @@ export default class ProjectsSection
                 {
                     href: 'https://swarwerth.github.io/switched.github.io/en/index.html',
                     x: - 4.8,
-                    y: - 3.5,
+                    y: - 3,
                     halfExtents:
                     {
                         x: 3.2,
                         y: 1.5
                     }
                 }
-            },
-            {
-                name: 'Klab',
-                imageSources:
-                [
-                    './models/projects/klab/slideA.jpg',
-                    './models/projects/klab/slideB.jpg',
-                    './models/projects/klab/slideC.jpg',
-                ],
-                floorTexture: this.resources.items.projectsKlabFloorTexture,
-                link:
-                {
-                    href: 'https://k-lab.netlify.app/',
-                    x: - 4.8,
-                    y: - 4.5,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                }
-            },
-            {
-                name: 'Plage',
-                imageSources:
-                [
-                    './models/projects/plage/slideA.jpg',
-                    './models/projects/plage/slideB.jpg',
-                    './models/projects/plage/slideC.jpg',
-                    './models/projects/plage/slideD.jpg',
-                    './models/projects/plage/slideE.jpg',
-                    './models/projects/plage/slideF.jpg',
-                ],
-                link:
-                {
-                    href: 'https://drive.google.com/drive/folders/1rzjDlgU5LUxaqAMozTkwMJ1_I-mUuRhP?usp=sharing',
-                    x: - 4.8,
-                    y: - 4,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                floorTexture: this.resources.items.projectsPlageFloorTexture
             }
         ]
     }

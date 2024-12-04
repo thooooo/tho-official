@@ -10,9 +10,8 @@ import Physics from './Physics.js'
 import CrossroadsSection from './Sections/CrossroadsSection.js'
 import InformationSection from './Sections/InformationSection.js'
 import IntroSection from './Sections/IntroSection.js'
+import PlaygroundSection from './Sections/PlaygroundSection.js'
 import ProjectsSection from './Sections/ProjectsSection.js'
-//import PlaygroundSection from './Sections/PlaygroundSection.js'
-import TechWatchSection from './Sections/TechWatchSection.js'
 import Shadows from './Shadows.js'
 import Sounds from './Sounds.js'
 import Tiles from './Tiles.js'
@@ -447,18 +446,7 @@ export default class World
         })
         this.container.add(this.sections.information.container)
 
-        //Tech Watch
-        this.sections.techwatch = new TechWatchSection({
-            ...options,
-            x: - 38,
-            y: - 34
-            // x: - 15,
-            // y: - 4
-        })
-        this.container.add(this.sections.techwatch.container)
-
         // Playground
-        /*
         this.sections.playground = new PlaygroundSection({
             ...options,
             x: - 38,
@@ -466,6 +454,6 @@ export default class World
             // x: - 15,
             // y: - 4
         })
-        this.container.add(this.sections.playground.container)*/
+        this.container.add(this.sections.playground.container)
     }
 }

@@ -25,7 +25,6 @@ export default class InformationSection
         this.setStatic()
         this.setBaguettes()
         this.setLinks()
-        this.setActivities()
         this.setTiles()
         this.setZone()
     }
@@ -155,38 +154,10 @@ export default class InformationSection
         }
     }
 
-    setActivities()
-    {
-        // Set up
-        this.activities = {}
-        this.activities.x = this.x + 8
-        this.activities.y = this.y - 18
-        this.activities.multiplier = 17
-
-        // Geometry
-        this.activities.geometry = new THREE.PlaneGeometry(1 * this.activities.multiplier, 1.5 * this.activities.multiplier, 1, 1)
-
-        // Texture
-        this.activities.texture = this.resources.items.informationActivitiesTexture
-        this.activities.texture.magFilter = THREE.NearestFilter
-        this.activities.texture.minFilter = THREE.LinearFilter
-
-        // Material
-        this.activities.material = new THREE.MeshBasicMaterial({ wireframe: false, color: 0xffffff, alphaMap: this.activities.texture, transparent: true })
-
-        // Mesh
-        this.activities.mesh = new THREE.Mesh(this.activities.geometry, this.activities.material)
-        this.activities.mesh.position.x = this.activities.x
-        this.activities.mesh.position.y = this.activities.y
-        this.activities.mesh.matrixAutoUpdate = false
-        this.activities.mesh.updateMatrix()
-        this.container.add(this.activities.mesh)
-    }
-
     setTiles()
     {
         this.tiles.add({
-            start: new THREE.Vector2(this.x - 1.2, this.y + 13),
+            start: new THREE.Vector2(this.x - 1.2, this.y + 17),
             delta: new THREE.Vector2(0, - 20)
         })
     }

@@ -47,17 +47,10 @@ export default class CrossroadsSection
             delta: new THREE.Vector2(7.5, 0)
         })
 
-        // To tech watch
-        this.tiles.add({
-            start: new THREE.Vector2(this.x - 13, this.y),
-            delta: new THREE.Vector2(-77, 0)
-        })
-
         // To playground
-        /*
         this.tiles.add({
             start: new THREE.Vector2(this.x - 13, this.y),
             delta: new THREE.Vector2(- 6, 0)
-        })*/
+        })
     }
 }
